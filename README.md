@@ -17,7 +17,7 @@ Database: MongoDB
 2. Run backend
    cd backend
    npm install
-   npm run dev
+   npm run server
 
 3. Run frontend
    cd frontend
