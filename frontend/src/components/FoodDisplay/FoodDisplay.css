@@ -1,0 +1,19 @@
+.food-display{
+    margin-top: 30px;
+     text-align: left;
+     padding: 0 40px;
+}
+
+.food-display h2{
+    font-size: max(2vw,24px);
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #111
+}
+
+.food-display-list{
+    display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px 30px; /* controls spacing between cards */
+  justify-items: center;
+}
