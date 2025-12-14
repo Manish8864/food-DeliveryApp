@@ -6,7 +6,8 @@ export const StoreContext = createContext(null)
 const StoreContextProvider = (props) => {
 
     const[cartItems,setCartItems] = useState({});
-    const url = "https://food-deliveryapp-backend-z8jx.onrender.com";
+    // const url = "https://food-deliveryapp-backend-z8jx.onrender.com";
+    const url = import.meta.env.VITE_BACKEND_URL;
     const [token,setToken] = useState(localStorage.getItem("token") ||"");
     const [food_list,setFoodList] = useState([])
 
