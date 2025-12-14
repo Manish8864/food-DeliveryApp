@@ -10,8 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
 
-  // const url = "https://food-deliveryapp-backend-z8jx.onrender.com"
-  const url =import.meta.env.VITE_BACKEND_URL;
+  const url = "https://food-deliveryapp-backend-z8jx.onrender.com"
+  // const url =import.meta.env.VITE_BACKEND_URL;
   
   return (
      <div>
