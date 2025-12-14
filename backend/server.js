@@ -15,7 +15,16 @@ const port = 4000;
 
 //middleware
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "https://food-deliveryapp-frontend-s2t9.onrender.com",         // frontend (deployed)
+      // "http://localhost:3000",         // User (local)
+      "https://food-deliveryapp-admin-cp2z.onrender.com" // Admin (deployed)
+    ],
+    credentials: true
+  })
+);
 
 // db connection
 connectDB();
