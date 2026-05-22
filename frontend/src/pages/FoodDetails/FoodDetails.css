@@ -53,7 +53,52 @@
   line-height: 1.4;
 }
 
+.food-details-cart{
+  margin-top: 14px;
+}
+
+.food-details-add{
+  border: 1px solid tomato;
+  background: #fff;
+  color: tomato;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.food-details-counter{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #f0f0f0;
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.food-details-minus,
+.food-details-plus{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid tomato;
+  background: #fff;
+  color: tomato;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.food-details-count{
+  min-width: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
 @media (max-width: 800px){
+
   .food-details-card{
     grid-template-columns: 1fr;
   }

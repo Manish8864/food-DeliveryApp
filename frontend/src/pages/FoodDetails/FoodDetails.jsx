@@ -6,7 +6,8 @@ import { StoreContext } from '../../context/StoreContext';
 export default function FoodDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { food_list, url } = useContext(StoreContext);
+  const { food_list, url, cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+
 
   const item = useMemo(() => {
     return (food_list || []).find((x) => String(x._id) === String(id));
@@ -40,7 +41,26 @@ export default function FoodDetails() {
           <h2 className="food-details-title">{item.name}</h2>
           <p className="food-details-price">₹{item.price}</p>
           <p className="food-details-desc">{item.description}</p>
+
+          <div className="food-details-cart">
+            {!cartItems[item._id] ? (
+              <button className="food-details-add" onClick={() => addToCart(item._id)}>
+                Add to cart
+              </button>
+            ) : (
+              <div className="food-details-counter">
+                <button className="food-details-minus" onClick={() => removeFromCart(item._id)}>
+                  -
+                </button>
+                <span className="food-details-count">{cartItems[item._id]}</span>
+                <button className="food-details-plus" onClick={() => addToCart(item._id)}>
+                  +
+                </button>
+              </div>
+            )}
+          </div>
         </div>
+
       </div>
     </div>
   );
