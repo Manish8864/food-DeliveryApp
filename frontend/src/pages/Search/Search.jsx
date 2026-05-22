@@ -3,7 +3,9 @@ import { StoreContext } from '../../context/StoreContext';
 import './Search.css';
 
 export default function Search() {
-  const { food_list } = useContext(StoreContext);
+  const { food_list, url } = useContext(StoreContext);
+
+
   const [query, setQuery] = useState('');
 
   const filtered = useMemo(() => {
@@ -31,9 +33,25 @@ export default function Search() {
         ) : null}
 
         {filtered.map((item) => (
-          <div key={item._id} className="search-result-item">
-            <p className="search-result-name">{item.name}</p>
-            <p className="search-result-price">₹{item.price}</p>
+          <div
+            key={item._id}
+            className="search-result-item"
+            role="button"
+            tabIndex={0}
+            onClick={() => (window.location.href = `/food/${item._id}`)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') window.location.href = `/food/${item._id}`;
+            }}
+          >
+            <img
+              className="search-result-thumb"
+              src={`${url}/images/${item.image}`}
+              alt={item.name}
+            />
+            <div className="search-result-text">
+              <p className="search-result-name">{item.name}</p>
+              <p className="search-result-price">₹{item.price}</p>
+            </div>
           </div>
         ))}
       </div>
