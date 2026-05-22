@@ -1,0 +1,5 @@
+.app-dim{
+  pointer-events: none;
+  filter: blur(1px);
+}
+

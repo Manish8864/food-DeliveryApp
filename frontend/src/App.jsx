@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import './AppLoginLock.css'
+import './AppDim.css'
+
+
 
 import Navbar from './components/navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
@@ -21,8 +25,13 @@ const App = () => {
 
   return (
     <>
-      {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
-      <div className={showLogin ? 'no-scroll' : ''}>
+      {showLogin ? (
+        <div className="app-login-lock">
+          <LoginPopup setShowLogin={setShowLogin} />
+        </div>
+      ) : null}
+      <div className={showLogin ? 'app-dim no-scroll' : ''}>
+
         <div className='app'>
           <Navbar setShowLogin={setShowLogin} />
           <Routes>
