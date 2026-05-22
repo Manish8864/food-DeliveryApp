@@ -145,8 +145,9 @@
     z-index: 1;
 }
 .navbar-profile img{
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
 }
 
 .navbar-profile:hover .nav-profile-dropdown{
