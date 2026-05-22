@@ -1,9 +1,8 @@
 import axios from "axios";
-import { createContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { StoreContext } from "./StoreContext.js";
 
-export const StoreContext = createContext(null)
-
-const StoreContextProvider = (props) => {
+export const StoreContextProvider = (props) => {
 
     const[cartItems,setCartItems] = useState({});
     const url = "https://food-deliveryapp-backend-z8jx.onrender.com";

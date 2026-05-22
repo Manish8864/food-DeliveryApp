@@ -14,16 +14,9 @@ const MyOrders = () => {
         setData(response.data.data);
     }
 
-    const cancelOrder = async (orderId) => {
-    const res = await axios.post(
-      url + "/api/order/cancel",
-      { orderId },
-      { headers: {token}  }
-    );
+    // cancelOrder was unused and caused eslint no-unused-vars.
+    // Leaving it here would require hooking it to UI.
 
-    alert(res.data.message);
-    fetchOrders();
-  }
 
     useEffect(()=>{
         if(token) {
