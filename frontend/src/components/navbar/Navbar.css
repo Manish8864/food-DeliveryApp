@@ -32,7 +32,13 @@
     gap: 40px;
 }
 
-.navbar-right img {
+.navbar-right-icons{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navbar-right-icons img{
   width: 25px;       /* adjust this value (e.g., 20px–35px) */
   height: 25px;
   cursor: pointer;
@@ -62,11 +68,11 @@
     cursor: pointer;
 }
 
-.navbar-search-icon{
+.navbar-cart-icon{
     position: relative;
 }
 
-.navbar-search-icon .dot{
+.navbar-cart-icon .dot{
     position: absolute;
     min-width: 10px;
     min-height: 10px;
@@ -75,6 +81,11 @@
     top: -8px;
     right: -8px;
 }
+
+.navbar-search-icon{
+    position: relative;
+}
+
 @media (max-width:1050px) {
     .navbar .logo{
         width: 140px;
